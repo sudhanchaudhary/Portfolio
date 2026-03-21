@@ -1,0 +1,353 @@
+/* Background */
+body {
+    background: #020617;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Star effect */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Navbar */
+.text-purple {
+    color: #c084fc !important;
+}
+
+.nav-link {
+    color: #cbd5f5 !important;
+}
+
+.nav-link:hover {
+    color: #a78bfa !important;
+}
+
+.hire-btn {
+    background: linear-gradient(45deg, #ec4899, #6366f1);
+    border-radius: 20px;
+    color: white;
+    padding: 8px 18px;
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+}
+
+/* Name */
+.name {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+/* Role */
+.role {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+/* Specialized text */
+.specialized {
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.desc {
+    color: #94a3b8;
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Social icons */
+.socials i {
+    
+    margin: 0 10px;
+    padding: 12px;
+    border-radius: 50%;
+    border: 1px solid #334155;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.socials i:hover {
+    background: #6366f1;
+}
+
+.socials a{
+    text-decoration: none;
+}
+
+/* About Section */
+.about {
+    background: rgba(255, 255, 255, 0.02);
+    height: 100vh;
+    border-top: 1px solid #1e293b;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #a78bfa;
+}
+
+.about-text {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.about-info p {
+    margin: 5px 0;
+    color: #cbd5f5;
+}
+
+.about-img {
+    max-width: 300px;
+    border-radius: 20px;
+    border: 2px solid #334155;
+}
+/* Projects Section */
+.projects {
+    height: 100vh;
+    border-top: 1px solid #1e293b;
+}
+
+/* Card */
+.project-card {
+    background: #020617;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #1e293b;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+}
+
+/* Title */
+.project-card h4 {
+    color: #a78bfa;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.project-card p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Tech Stack */
+.tech {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #60a5fa;
+}
+
+/* Links */
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #c084fc;
+    font-size: 14px;
+}
+
+.links a:hover {
+    color: #6366f1;
+}
+
+/* Skills Section */
+.skills {
+    background: rgba(255, 255, 255, 0.02);
+    height: 100vh;
+    border-top: 1px solid #1e293b;
+}
+
+/* Card */
+.skill-card {
+    background: #020617;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #1e293b;
+}
+
+/* Title */
+.skill-card h4 {
+    color: #a78bfa;
+    margin-bottom: 20px;
+}
+
+/* Skill item */
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 5px;
+    color: #cbd5f5;
+}
+
+/* Progress bar */
+.progress {
+    height: 8px;
+    background: #1e293b;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #6366f1, #a78bfa);
+}
+
+/* Badges */
+.skill-badge {
+    background: #1e293b;
+    color: #cbd5f5;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+}
+
+.skill-badge:hover {
+    background: #6366f1;
+}
+
+/* GitHub Section */
+.github {
+    border-top: 1px solid #1e293b;
+}
+
+.stat-box {
+    background: #020617;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+}
+
+.stat-box h3 {
+    color: #a78bfa;
+}
+
+.stat-box p {
+    color: #94a3b8;
+}
+
+.github-graph {
+    background-color: #cddef4;
+    border-radius: 10px;   
+}
+
+/* Contact Section */
+.contact {
+     background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid #1e293b;
+}
+
+/* Form Inputs */
+.form-control {
+    background: #020617;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+}
+
+.form-control::placeholder {
+    color: #64748b;
+}
+
+.form-control:focus {
+    border-color: #6366f1;
+    box-shadow: none;
+}
+
+/* Simple Button (no gradient) */
+.simple-btn {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.simple-btn:hover {
+    background: #6366f1;
+    border-color: #6366f1;
+}
+
+/* Right Side Info */
+.contact-info h4 {
+    color: #a78bfa;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    color: #94a3b8;
+}
+
+.info-item {
+    margin-top: 15px;
+}
+
+.info-item strong {
+    color: #cbd5f5;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid #1e293b;
+    background: #020617;
+}
+
+/* Name */
+.footer-name {
+    color: #a78bfa;
+    margin-bottom: 5px;
+}
+
+/* Role */
+.footer-role {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Links */
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #cbd5f5;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #6366f1;
+}
+
+/* Social Icons */
+.footer-socials a {
+    margin: 0 8px;
+    color: #cbd5f5;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #6366f1;
+}
