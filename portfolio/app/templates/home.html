@@ -159,7 +159,7 @@
                         <h4>Backend</h4>
 
                         {% for i in backend %}
-                          <div class="skill">
+                        <div class="skill">
                             <span>{{i.name}}</span>
                             <div class="progress">
                                 <div class="progress-bar" style="width: {{i.progress}}%"></div>
@@ -174,14 +174,14 @@
                     <div class="skill-card">
                         <h4>Frontend</h4>
 
-                       {% for i in frontend %}
-                          <div class="skill">
+                        {% for i in frontend %}
+                        <div class="skill">
                             <span>{{i.name}} </span>
                             <div class="progress">
                                 <div class="progress-bar" style="width: {{i.progress}}%"></div>
                             </div>
                         </div>
-                       {% endfor %}
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -192,7 +192,7 @@
 
                         <div class="badges mt-3">
                             {% for i in tools %}
-                              <span class="badge skill-badge">{{i.name}}</span>
+                            <span class="badge skill-badge">{{i.name}}</span>
                             {% endfor %}
                         </div>
                     </div>
@@ -245,9 +245,18 @@
             <div class="row align-items-center">
 
                 <!-- LEFT: Form -->
-                <div class="col-lg-6 px-3">
+                <div class="col-lg-6 px-3" id="message">
                     <h4 style="color: #a78bfa; margin-bottom: 10px;">Send message</h4>
-                    <form method="POST" >
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{message}}
+                    </div>
+
+                    {% endfor %}
+
+                    {% endif %}
+                    <form method="POST" action="{% url 'home' %}">
                         {% csrf_token %}
 
                         <input type="text" name="name" placeholder="Your Name" class="form-control mb-3" required>
@@ -258,7 +267,7 @@
                             required></textarea>
 
                         <button type="submit" class="btn simple-btn w-100">
-                            Send Message
+                        <a href="#message" style="text-decoration: none; color: #e2e8f0;">Send Message</a>
                         </button>
                     </form>
                 </div>
@@ -313,8 +322,9 @@
 
                 <!-- Left -->
                 <div class="col-lg-4 mb-3 mb-lg-0">
-                    
-                    <h5 class="footer-name text-start"><img src="{% static 'images/logo.png' %}" height="30px" width="30px" alt=""> Madhusudhan </h5>
+
+                    <h5 class="footer-name text-start"><img src="{% static 'images/logo.png' %}" height="30px"
+                            width="30px" alt=""> Madhusudhan </h5>
                     <p class="footer-role text-start">Full Stack Developer (Backend Specialized)</p>
                 </div>
 
@@ -325,16 +335,17 @@
                         <a href="#project">Projects</a>
                         <a href="#skills">Skills</a>
                         <a href="#contact">Contact</a>
+                        <a href="{% url 'content' %}">Content</a>
                     </div>
                 </div>
 
                 <!-- Right -->
                 <div class="col-lg-4">
                     <div class="footer-socials text-end">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/sudhanchaudhary"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/madhusudhan-chaudhary-233a5b3b8/"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:sawuriya007@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
 
