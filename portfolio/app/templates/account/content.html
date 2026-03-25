@@ -1,263 +1,168 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content</title>
-    <!-- bootstrap css -->
+    <title>Admin Panel</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- favicon -->
-    <link rel="icon" href="{% static 'images/p_logo/favicon.ico' %}">
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/content.css' %}">
 </head>
 
 <body>
-    <!-- message section start -->
-    <div class="container">
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <h2 class="text-center">Messages</h2>
-                <table class="table mx-auto">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Message</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for i in msg %}
-                        <tr>
-                            <td>{{i.name}}</td>
-                            <td>{{i.email}}</td>
-                            <td>{{i.message}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
+<div class="d-flex">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4 class="text-center py-3">Admin</h4>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="{% url 'admin:index' %}">Django Admin</a></li>
+        </ul>
     </div>
-    <!-- message section end -->
 
-    <!-- project start -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mx-auto">
-                <h2 class="text-center">Projects</h2>
-                <table class="table mx-auto">
-                    <thead>
-                        <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Tech User</th>
-                            <th scope="col">Github</th>
-                            <th scope="col">Live</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for i in project %}
-                        <tr>
-                            <td>{{i.title}}</td>
-                            <td>{{i.desc}}</td>
-                            <td>{{i.tech}}</td>
-                            <td><a href="{{i.github_link}}" target="_blank">GitHub</a></td>
-                            <td><a href="{{i.live_link}}" target="_blank">Live</a></td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <a href="#project">
-                    <div class="btn alert alert-info">Add new project</div>
-                </a>
-            </div>
+    <!-- Main Content -->
+    <div class="main-content p-4">
+
+        <!-- HERO -->
+        <div class="admin-hero mb-4">
+            <h2>Welcome, Madhusudhan</h2>
+            <p>
+                This dashboard lets you manage your portfolio content, handle user messages,
+                update projects, and track your technical skills — all in one place.
+            </p>
         </div>
-    </div>
-    <!-- project end -->
 
-    <!-- Skills start -->
-    <div class="container">
-        <div class="row">
-
-            <div class="col-5">
-                <h2 class="text-center">Backend</h2>
-                <table class="table mx-auto">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Progress</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for i in backend %}
-                        <tr>
-                            <td>{{i.name}}</td>
-                            <td>{{i.progress}}%</td>
-
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <a href="#backend">
-                    <div class="btn alert alert-info">Add new skill</div>
-                </a>
+        <!-- Messages -->
+        <div class="card-box">
+            <div class="card-header-custom">
+                <h4 class="mb-0"> Messages</h4>
+                <div class="btn-wrap">
+                    <a href="{% url 'admin:index' %}" class="btn-manage">
+                         Manage
+                    </a>
+                </div>
             </div>
-            <div class="col-5">
-                <h2 class="text-center">Frontend</h2>
-                <table class="table mx-auto">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Progress</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for i in frontend %}
-                        <tr>
-                            <td>{{i.name}}</td>
-                            <td>{{i.progress}}%</td>
 
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <a href="#frontend">
-                    <div class="btn alert alert-info">Add new skill</div>
-                </a>
+            <table class="table table-hover mt-3">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in msg %}
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.message}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Projects -->
+        <div class="card-box">
+            <div class="card-header-custom">
+                <h4 class="mb-0"> Projects</h4>
+                <div class="btn-wrap">
+                    <a href="{% url 'admin:index' %}" class="btn-manage">
+                         Manage
+                    </a>
+                </div>
             </div>
-            <div class="col-2">
-                <h2 class="text-center">Tools</h2>
-                <table class="table mx-auto">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+
+            <table class="table table-hover mt-3">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Tech</th>
+                        <th>GitHub</th>
+                        <th>Live</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in project %}
+                    <tr>
+                        <td>{{i.title}}</td>
+                        <td>{{i.desc}}</td>
+                        <td>{{i.tech}}</td>
+                        <td><a href="{{i.github_link}}" target="_blank">GitHub</a></td>
+                        <td><a href="{{i.live_link}}" target="_blank">Live</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Skills -->
+        <div class="card-box">
+            <div class="card-header-custom">
+                <h4 class="mb-0"> Skills Overview</h4>
+                <div class="btn-wrap">
+                    <a href="{% url 'admin:index' %}" class="btn-manage">
+                         Manage
+                    </a>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+
+                <!-- Backend -->
+                <div class="col-md-4">
+                    <h6 class="section-title">Backend</h6>
+                    {% for i in backend %}
+                        <p class="skill-name">{{i.name}}</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" style="width: {{i.progress}}%">
+                                {{i.progress}}%
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Frontend -->
+                <div class="col-md-4">
+                    <h6 class="section-title">Frontend</h6>
+                    {% for i in frontend %}
+                        <p class="skill-name">{{i.name}}</p>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-success" style="width: {{i.progress}}%">
+                                {{i.progress}}%
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Tools -->
+                <div class="col-md-4">
+                    <h6 class="section-title">Tools</h6>
+                    <ul class="list-group">
                         {% for i in tools %}
-                        <tr>
-                            <td>{{i.name}}</td>
-
-                        </tr>
+                        <li class="list-group-item">
+                            {{i.name}}
+                        </li>
                         {% endfor %}
-                    </tbody>
-                </table>
-                <a href="#tools">
-                    <div class="btn alert alert-info">Add new tool</div>
-                </a>
+                    </ul>
+                </div>
+
             </div>
         </div>
 
     </div>
-    <!-- Skills end -->
+</div>
 
-    <!-- Project Entry start-->
-    <div class="container" id="project">
-        <div class="row">
-            <div class="col-8 mx-auto">
-                <h2 class="text-center">Enter Project</h2>
-                <form method="POST" action="{% url 'content' %}">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Project Name</label>
-                        <input type="text" name="p_title" class="form-control" id="name">
-
-                    </div>
-                    <div class="mb-3">
-                        <label for="desc" class="form-label">Description</label>
-                        <input type="text" name="p_desc" class="form-control" id="desc">
-                    </div>
-                    <div class="mb-3">
-                        <label for="tech" class="form-label">Tech Used</label>
-                        <input type="text" name="p_tech" class="form-control" id="tech">
-                    </div>
-                    <div class="mb-3">
-                        <label for="g_link" class="form-label">Github link</label>
-                        <input type="text" name="g_link" class="form-control" id="g_link">
-                    </div>
-                    <div class="mb-3">
-                        <label for="l_link" class="form-label">Live link</label>
-                        <input type="text" name="l_link" class="form-control" id="l_link">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Project Entry end-->
-
-    <!-- frontend entry start -->
-    <div class="container" id="fromtend">
-        <div class="row">
-            <div class="col-5 mx-auto">
-                <h2 class="text-center">Frontend</h2>
-                <form method="POST" action="{% url 'content' %}">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" name="f_name" class="form-control" id="name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Progress</label>
-                        <input type="number" name="f_progress" class="form-control" id="name">
-
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <!-- frontend entry end -->
-
-    <!-- backend entry start -->
-    <div class="container" id="backend">
-        <div class="row">
-            <div class="col-5 mx-auto">
-                <h2 class="text-center">Backend</h2>
-                <form method="POST" action="{% url 'content' %}">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" name="b_name" class="form-control" id="name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Progress</label>
-                        <input type="number" name="b_progress" class="form-control" id="name">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <!-- backend entry end -->
-
-    <!-- tools entry start -->
-    <div class="container" id="backend">
-        <div class="row">
-            <div class="col-5 mx-auto">
-                <h2 class="text-center">Tools</h2>
-                <form method="POST" action="{% url 'content' %}">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" name="t_name" class="form-control" id="name">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- tools entry start -->
-
-    <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>

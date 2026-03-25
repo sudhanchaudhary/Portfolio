@@ -59,20 +59,6 @@ def content(request):
         l_link=request.POST.get('l_link')
         Projects.objects.create(title=p_name,desc=p_desc,tech=p_tech,github_link=g_link,live_link=l_link)
         return redirect('context')
-    elif request.method == "POST":
-        f_name=request.POST.get('f_name')
-        f_progress=request.POST.get('f_progress')
-        Frontend.objects.create(name=f_name,progress=f_progress)
-        return redirect('content')
-    elif request.method == "POST":
-        b_name=request.POST.get('b_name')
-        b_progress=request.POST.get('b_progress')
-        Backend.objects.create(name=b_name,progress=b_progress)
-        return redirect('content')
-    elif request.method == "POST":
-        t_name=request.POST.get('t_name')
-        Tools.objects.create(name=t_name)
-        return redirect('content')    
     context={
         'msg':msg,
         'project':project,
@@ -81,3 +67,5 @@ def content(request):
         'tools':tools
     }
     return render(request,'account/content.html',context)
+
+    
