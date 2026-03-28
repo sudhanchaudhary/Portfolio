@@ -30,10 +30,16 @@ body::before {
 }
 
 .hire-btn {
-    background: linear-gradient(45deg, #ec4899, #6366f1);
+    background: linear-gradient(45deg, #25224a, #212270);
     border-radius: 20px;
     color: white;
     padding: 8px 18px;
+}
+
+.hire-btn:hover{
+   background: transparent;
+   border: 1px solid white;
+    color: white;
 }
 
 /* Hero */
