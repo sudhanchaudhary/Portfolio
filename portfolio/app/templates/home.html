@@ -133,8 +133,13 @@
                         <p class="tech">{{i.tech}}</p>
 
                         <div class="links">
-                            <a href="{{i.github_link}}" target="_blank">GitHub</a>
-                            <a href="{{i.live_link}}" target="_blank">Live</a>
+                            {% if i.github_link %}
+                              <a href="{{i.github_link}}" target="_blank">GitHub</a>
+                            {% endif %}
+                            {% if i.live_link %}
+                              <a href="{{i.live_link}}" target="_blank">Live</a>
+                            {% endif %}
+                            
                         </div>
                     </div>
                 </div>
